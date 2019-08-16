@@ -114,7 +114,7 @@ for x = 1:row
             dt(x,y,z,:)=[diffusiontensor(1:3) diffusiontensor(5:6) diffusiontensor(9)];
             vecf(x,y,z,:) = eigvecs(:,end)*eigvals_orig(x,y,z,end);
 
-            % NOTE: testing calculate angles
+            % calculate angles
             angle_x(x,y,z) = atan2d(norm(cross(eigvecs(:,3),[1;0;0])),dot(eigvecs(:,3),[1;0;0]));
             angle_y(x,y,z) = atan2d(norm(cross(eigvecs(:,3),[0;1;0])),dot(eigvecs(:,3),[0;1;0]));
             angle_z(x,y,z) = atan2d(norm(cross(eigvecs(:,3),[0;0;1])),dot(eigvecs(:,3),[0;0;1]));
